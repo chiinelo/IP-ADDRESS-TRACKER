@@ -1,0 +1,32 @@
+.Header {
+  background: url(../images/CombinedShape.png) no-repeat;
+  padding: 2rem 5rem 10rem;
+  background-size: cover;
+  background-color: var(--Dark-Violet);
+  text-align: center;
+}
+.headerText {
+  color: #fff;
+  font-size: 26px;
+  font-style: Rubik;
+  font-weight: 500;
+  line-height: 30px;
+}
+.ipInputText{
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border: none;
+  width: 80%;
+}
+.inputbutton {
+  background-position: center center;
+  padding-left: 1.9rem;
+  padding-right: 1.9rem;
+  height: 3.65rem;
+  width: 3.125rem;
+  border: none;
+  cursor: pointer;
+  background-color: #000;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+}

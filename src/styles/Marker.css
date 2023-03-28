@@ -1,0 +1,21 @@
+/* Change the color of the marker icon */
+.leaflet-marker-icon {
+    background: url(../images/iconmonstr-location-pin-thin.svg) no-repeat;
+  /* background-color: red; */
+  /* border: 2px solid white; */
+  border-radius: 50%;
+  alt: none;
+}
+
+/* Change the color of the marker icon shadow */
+.leaflet-marker-shadow {
+  /* filter: hue-rotate(120deg); */
+  display: none;
+}
+
+/* Remove the default marker styles */
+.customMarker img {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}

@@ -1,21 +1,22 @@
 import React from "react";
 import styles from "../styles/MapSection.module.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// import L from "leaflet";
-// import markerIcon from "../images/markerIcon.svg";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "../styles/Marker.css";
 
-const MapSection = () => {
-  const position = [8.1386, 5.1026]; // [latitude, longitude]
+const MapSection = (props) => {
+  const position = [props?.lat, props?.long];
   const zoomLevel = 13;
 
-//   const myIcon = L.icon({
-//     iconUrl: {markerIcon},
-//     iconSize: [38, 38],
-//     iconAnchor: [19, 38],
-//     popupAnchor: [0, -38],
-//   });
+  if (!position) {
+    console.log("work");
+  }
+  const markerIcon = L.icon({
+    iconUrl: "src/images/markerIcon.ico",
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+  });
 
   return (
     <div>
@@ -30,15 +31,11 @@ const MapSection = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker
-            position={position}
-            alt=""
-            className={`${styles.customMarker}`}
-          >
+          <Marker position={position} icon={markerIcon}>
             <Popup>
               <div>
-                <h3>Location Name</h3>
-                <p>Address: 1234 Main St.</p>
+                <h3>{props.country}</h3>
+                <p>{props.city}.</p>
               </div>
             </Popup>
           </Marker>

@@ -1,4 +1,18 @@
-.mapSection{
-    background: #888;
-    height: 200px;
+.mapSection {
+  background: #888;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  bottom: 15rem;
+}
+
+@media (min-width: 768px) {
+  .mapSection{
+    bottom: 18rem;
+  }
+}
+@media (min-width: 1024px) {
+  .mapSection{
+    bottom: 15rem;
+  }
 }

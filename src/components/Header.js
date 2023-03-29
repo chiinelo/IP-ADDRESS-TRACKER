@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/header.module.css";
 import arrow from "../images/Path.png";
+import Results from "../components/Results";
 
-const Header = () => {
+const Header = (props) => {
   const [color, setColor] = useState("#000");
   const [inputValue, setInputValue] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const handleClick = () => {
     setColor("#899");
+    props.handleSubmit(inputValue);
     console.log("Button clicked!");
   };
 
@@ -35,13 +37,14 @@ const Header = () => {
           <form className={` d-flex d-sm-flex d-md-block`}>
             <input
               type="text"
-              placeholder="IP Address"
+              placeholder="Search for any IP address or domain"
               className={`${styles.ipInputText} p-3`}
               value={inputValue}
               onChange={handleInputChange}
+              required
             />
             <button
-              type="submit"
+              type="button"
               className={`${styles.inputbutton}`}
               style={{ backgroundColor: color }}
               onClick={handleClick}
@@ -52,6 +55,7 @@ const Header = () => {
           </form>
         </div>
       </div>
+      <Results {...props} />
     </div>
   );
 };

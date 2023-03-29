@@ -3,12 +3,17 @@
   height: 200px;
   position: relative;
   z-index: 1;
-  bottom: 15rem;
+  bottom: 23rem;
 }
 
+@media (width:540px) {
+  .mapSection{
+    bottom: 25rem;
+  }
+}
 @media (min-width: 768px) {
   .mapSection{
-    bottom: 18rem;
+    bottom: 27rem;
   }
 }
 @media (min-width: 1024px) {
